@@ -9,9 +9,10 @@
             android:layout_height="wrap_content" app:srcCompat="@mipmap/ic_launcher"
             android:id="@+id/imageView3" android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:contentDescription="@string/coverimageofvideo" app:layout_constraintBottom_toTopOf="@+id/videlTitle"/>
     <TextView
-            android:text="TextView"
+            android:text="@string/textview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/videlTitle"
