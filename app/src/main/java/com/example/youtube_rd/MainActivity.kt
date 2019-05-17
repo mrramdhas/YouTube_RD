@@ -1,12 +1,11 @@
 package com.example.youtube_rd
 
-import android.content.Context
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.widget.LinearLayout
+import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
 import java.io.IOException
@@ -17,9 +16,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        recyclerView_main.setBackgroundColor(Color.CYAN)
+        recyclerView_main.setBackgroundColor(Color.WHITE)
         recyclerView_main.layoutManager = LinearLayoutManager(this) as RecyclerView.LayoutManager?
-        recyclerView_main.adapter = Main_Adapter()
 
         fetchJson()
 
@@ -37,10 +35,13 @@ class MainActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call, response: Response) {
                 val response = response.body()?.string()
-                print(response)
+                val gson = GsonBuilder().create()
+
+                val homeFeed = gson.fromJson(response, HomeFeed::class.java)
+                runOnUiThread {
+                    recyclerView_main.adapter = Main_Adapter(homeFeed)
+                }
             }
-
         })
-
     }
 }
