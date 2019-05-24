@@ -5,4 +5,10 @@
     <string name="channelname">ChannelName</string>
     <string name="thumbnail">Tumbnail</string>
     <string name="bottomView">TextView</string>
+    <string name="course_imageView">TODO</string>
+    <string name="textview1">TextView</string>
+    <string name="textview2">TextView</string>
+    <string name="CourseImageView">TODO</string>
+    <string name="coursetitle">courseTitle</string>
+    <string name="lessionlbl">LessionLbl</string>
 </resources>
